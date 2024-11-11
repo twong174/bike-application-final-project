@@ -8,10 +8,6 @@ const SearchBar = () => {
   return (
     <>
       <div className="top-nav-bar-container">
-        <div className="logo-container">
-          <img src={RavenLogo} alt="Raven Logo" />
-          <span className="brand-name"> BikeBuddy </span>
-        </div>
         <div className="search-bar-container">
           <input className="search-bar" placeholder="Search..." />
           <img src={SearchLogo} alt="Search Logo" className="search-icon" />

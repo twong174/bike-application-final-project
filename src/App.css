@@ -1,3 +1,48 @@
-body { 
-  background-color: gray;
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+.app-container { 
+  display: flex;
+  height: 100vh;
+}
+
+.vertical-nav { 
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.main-content { 
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 200px);
+}
+
+.top-nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  width: calc(100% - 200px); 
+  left: 200px; 
+  top: 0;
+  z-index: 10;
+}
+
+.dashboard {
+  flex: 1;
+  padding: 20px;
+  margin-top: 64px; 
+  background-color: #F5F7FA;
+  overflow-y: auto;
 }

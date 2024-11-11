@@ -1,0 +1,47 @@
+* { 
+  font-family: Roboto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-container {
+  width: 250px;
+  height: 250px;
+  border: solid;
+  border-radius: 5px;
+
+}
+
+.top-row { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fixed-label { 
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgb(255, 166, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.more-horiz-logo { 
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.bike-name { 
+  margin-left: 20px;
+}
+
+.bike-model { 
+  margin-left: 20px;
+}

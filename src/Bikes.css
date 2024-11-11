@@ -1,0 +1,38 @@
+.bike-dashboard-container { 
+  padding: 10px;
+}
+
+.top-bar-container { 
+  margin-bottom: 20px;
+}
+
+.bike-container-title { 
+  font-size: 24px;
+}
+
+.bike-container-description { 
+  font-size: 14px;
+}
+
+.action-bar-container { 
+  background-color: lightpink;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.action-bar-buttons { 
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.bike-card-container { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
