@@ -2,6 +2,7 @@ import React from "react";
 import DashboardInfoCard from "./DashboardInfoCard";
 import DashboardActionBar from "./DashboardActionBar";
 import CalenderWidget from "./CalenderWidget";
+import ToDoWidget from "./ToDoWidget";
 
 import "./Dashboard.css";
 
@@ -14,15 +15,21 @@ const Dashboard = () => {
       </div>
 
       <DashboardActionBar />
-      
-      <div className="overall-dashboard-info-card-container">
-        <DashboardInfoCard />
-        <DashboardInfoCard />
-        <DashboardInfoCard />
-        <DashboardInfoCard />
-      </div>
 
-      <CalenderWidget/>
+      <div className="widget-container">
+        <div className="left-widget-container">
+          <div className="info-card-grid-container">
+            <DashboardInfoCard />
+            <DashboardInfoCard />
+            <DashboardInfoCard />
+            <DashboardInfoCard />
+          </div>
+          <CalenderWidget />
+        </div>
+        <div className="right-widget-container">
+          <ToDoWidget />
+        </div>
+      </div>
     </div>
   );
 };

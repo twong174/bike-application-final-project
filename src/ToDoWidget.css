@@ -1,0 +1,22 @@
+.todo-widget-container { 
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  padding: 15px 10px;
+  margin: 0 10px;
+}
+
+.todo-widget-title-container { 
+  margin-bottom: 10px;
+}
+
+.todo-widget-title { 
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.todo-widget-description { 
+  font-size: 14px;
+  color: rgb(129, 129, 134);
+  margin-top: 5px;
+}

@@ -1,19 +1,37 @@
-.maintenance-action-bar { 
-  display: flex; 
-  flex-direction: row;
-  align-items: center;
-  margin-top: 100px;
-  background-color: lightblue;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
+.top-bar-container {
+  padding: 10px;
 }
 
-.maintenance-action-bar-button-container { 
+.maintenance-container-title {
+  font-size: 24px;
+}
+
+.maintenance-container-description {
+  font-size: 14px;
+}
+
+.widget-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px;
+  width: 100%;
+}
+
+.left-widget-container {
+  display: grid;
+  row-gap: 10px;
+}
+
+.info-card-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.right-widget-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch; 
 }
-
 
 

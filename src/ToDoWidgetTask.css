@@ -1,0 +1,35 @@
+.todo-widget-task-container { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgb(242, 242, 247)	;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.left-container, .right-container { 
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.date-container { 
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.task { 
+  margin-left: 10px;
+}
+
+.more-vert-container { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: rgb(242, 242, 247)	;
+}

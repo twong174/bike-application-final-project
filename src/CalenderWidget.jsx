@@ -5,20 +5,20 @@ const CalenderWidget = () => {
   return (
     <div className="calender-widget-container">
       <div className="calender-widget-title-container">
-        <p className="calender-widget-title">Calender</p>
+        <p className="calender-widget-title">CALENDER</p>
         <p className="calender-widget-description">A few upcoming tasks...</p>
       </div>
       <div className="calender-grid-container">
-        <h1 className="current-month"> December 2020 </h1>
+        <p className="current-month"> DECEMBER 2020 </p>
         <ol className="calender-grid">
-          <li class="day-name">Sun</li>
-          <li class="day-name">Mon</li>
-          <li class="day-name">Tue</li>
+          <li className="day-name">Sun</li>
+          <li className="day-name">Mon</li>
+          <li className="day-name">Tue</li>
           <li class="day-name">Wed</li>
-          <li class="day-name">Thu</li>
-          <li class="day-name">Fri</li>
-          <li class="day-name">Sat</li>
-          <li class="first-day">1</li>
+          <li className="day-name">Thu</li>
+          <li className="day-name">Fri</li>
+          <li className="day-name">Sat</li>
+          <li className="first-day">1</li>
 
           <li>2</li>
           <li>3</li>

@@ -7,7 +7,6 @@ import DashboardActionBar from "./DashboardActionBar";
 import DashboardInfoCard from "./DashboardInfoCard";
 import IncreaseButton from "./IncreaseButton";
 import Maintenance from "./Maintenance";
-import DashboardInfoCardTwo from "./DashboardInfoCardTwo";
 import "./App.css";
 
 const App = () => {
