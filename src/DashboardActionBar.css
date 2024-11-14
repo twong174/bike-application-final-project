@@ -1,0 +1,40 @@
+.dashboard-action-bar-container { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 10px;
+}
+
+.action-bar-button-container { 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.monthy-button-container, .download-button-container { 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgb(174, 174, 177);
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 2px 5px 2px 5px;
+}
+
+.monthly-button, .download-button  {
+  border: none;
+  border-radius: 15px;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(129, 129, 134);
+  font-weight: 500;
+}

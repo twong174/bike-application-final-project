@@ -8,7 +8,7 @@ import CalenderLogo from "../src/svg-images/calender.svg";
 import DownArrowLogo from "../src/svg-images/down-arrow.svg";
 import RavenLogo from "../src/svg-images/raven.svg";
 
-const Navbar = () => {
+const Navbar = ({ setDefaultHomeScreen }) => {
   return (
     <>
       <ul className="main-container">
@@ -17,7 +17,7 @@ const Navbar = () => {
           <span className="brand-name"> BikeBuddy </span>
         </div>
         <div className="nav-container">
-          <li>
+          <li onClick={() => setDefaultHomeScreen("Dashboard")}>
             <img className="hover" src={DashboardLogo} alt="Dashboard Logo" />
             Dashboard
             <img
@@ -26,7 +26,7 @@ const Navbar = () => {
               alt="Down Arrow Logo"
             />
           </li>
-          <li>
+          <li onClick={() => setDefaultHomeScreen("Bikes")}>
             <img className="hover" src={BikeLogo} alt="Bike Logo" />
             Bikes
             <img
@@ -35,7 +35,7 @@ const Navbar = () => {
               alt="Down Arrow Logo"
             />
           </li>
-          <li>
+          <li onClick={() => setDefaultHomeScreen("Maintenance")}>
             <img
               className="hover"
               src={MaintenanceLogo}

@@ -13,9 +13,7 @@ const SearchBar = () => {
           <img src={SearchLogo} alt="Search Logo" className="search-icon" />
         </div>
         <div className="theme-container">
-          <div>
-            <img src={DarkModeLogo} alt="Search Logo" className="theme-logo" />
-          </div>
+          <img src={DarkModeLogo} alt="Dark Mode Logo" className="theme-logo" />
         </div>
       </div>
     </>

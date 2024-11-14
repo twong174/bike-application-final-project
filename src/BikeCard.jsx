@@ -1,6 +1,7 @@
 import React from "react";
 import "./BikeCard.css";
 import MoreHorizLogo from "../src/svg-images/more-horiz.svg";
+import ConstructionLogo from "../src/svg-images/construction.svg";
 
 const BikeCard = () => {
   return (
@@ -13,8 +14,13 @@ const BikeCard = () => {
           alt="More Horiz Logo"
         />
       </div>
-      <p className="bike-name"> Name </p>
-      <p className="bike-model"> Model </p>
+      <p className="bike-name"> Wegus </p>
+      <p className="bike-model"> Tyrant Beastie </p>
+      <hr />
+      <div className="last-maintenance-date-container">
+        <img src={ConstructionLogo} alt="Construction Logo" />
+        <div className="last-maintenance-date"> 02 May 23 </div>
+      </div>
     </div>
   );
 };

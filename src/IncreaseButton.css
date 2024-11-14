@@ -1,0 +1,24 @@
+.button-container { 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  color: rgb(76, 222, 76);
+  width: 50px;
+  height: 15px;
+  border-radius: 10px;
+  gap: 1px;
+  border: none;
+  background-color: rgb(202, 237, 202);
+}
+
+.button-container img { 
+  width: 10px;
+  height: 10px;
+}
+
+.percent-increase-number { 
+  font-size: 10px;
+  font-weight: bold;
+}

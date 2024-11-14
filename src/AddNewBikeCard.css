@@ -1,0 +1,32 @@
+* { 
+  box-sizing: border-box;
+}
+
+.add-new-bike-card-container { 
+  width: 300px;
+  height: 300px;
+  border: solid;
+  border-radius: 10px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-logo { 
+ margin-top: 10px;
+ margin-left: 10px;
+}
+
+.input-field-container input { 
+  width: 100%;
+}
+
+.add-bike-button { 
+  width: 100%;
+}
+
+
+

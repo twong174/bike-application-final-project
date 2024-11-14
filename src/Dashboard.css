@@ -1,0 +1,22 @@
+.top-bar-container { 
+  padding: 10px;
+}
+
+.dashboard-container-title { 
+  font-size: 24px;
+}
+
+.dashboard-container-description { 
+  font-size: 14px;
+}
+
+.overall-dashboard-info-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+  gap: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}

@@ -1,7 +1,7 @@
 * { 
   padding: 0;
   margin: 0;
-  font-family: Roboto;
+  font-family: Inter;
   box-sizing: border-box;
 }
 
@@ -26,21 +26,26 @@
   height: 30px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  margin-left: 200px;
+  margin-left: 100px;
   border: none;
-  background-color: lightgrey;
+  background-color: rgb(242, 242, 247);
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
 }
 
 .search-icon { 
-  background-color: lightpink;
+  background-color: rgb(242, 242, 247);
   height: 30px;
   width: 30px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  cursor: pointer;
 }
 
 .theme-container { 
-  margin-right: 20px;
+  margin-right: 300px;
 }
 
 
