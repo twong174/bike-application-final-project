@@ -4,9 +4,11 @@
 
 .dashboard-container-title {
   font-size: 24px;
+  font-weight: 600;
 }
 
 .dashboard-container-description {
+  color: rgb(142, 142, 147);
   font-size: 14px;
 }
 

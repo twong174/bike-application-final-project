@@ -1,5 +1,5 @@
 import React from "react";
-import "./ToDoWidget.css";
+import "../src/styles/ToDoWidget.css";
 import ToDoWidgetTask from "./ToDoWidgetTask";
 
 const ToDoWidget = () => {

@@ -1,0 +1,18 @@
+.edit-delete-container { 
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  width: 140px;
+  height: 80px;
+  border-radius: 5px;
+  padding-left: 5px;
+  align-items: start;
+  justify-content: center;
+}
+
+.edit-container, .delete-container { 
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+}

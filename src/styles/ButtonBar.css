@@ -1,4 +1,4 @@
-.dashboard-action-bar-container { 
+.button-bar-container { 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -9,15 +9,14 @@
   margin: 10px 10px;
 }
 
-.action-bar-button-container { 
+.button-container { 
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
 
-
-.monthy-button-container, .download-button-container { 
+.left-button-container, .right-button-container { 
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,7 +28,7 @@
   padding: 2px 5px 2px 5px;
 }
 
-.monthly-button, .download-button  {
+.left-button, .right-button { 
   border: none;
   border-radius: 15px;
   background-color: white;
@@ -38,3 +37,4 @@
   color: rgb(129, 129, 134);
   font-weight: 500;
 }
+

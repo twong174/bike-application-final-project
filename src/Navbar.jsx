@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Navbar.css";
+import "../src/styles/Navbar.css";
 import BikeLogo from "../src/svg-images/bike.svg";
 import DashboardLogo from "../src/svg-images/dashboard.svg";
 import MaintenanceLogo from "../src/svg-images/maintenance.svg";
@@ -18,53 +18,92 @@ const Navbar = ({ setDefaultHomeScreen }) => {
         </div>
         <div className="nav-container">
           <li onClick={() => setDefaultHomeScreen("Dashboard")}>
-            <img className="hover" src={DashboardLogo} alt="Dashboard Logo" />
-            Dashboard
-            <img
-              className="down-arrow-logo"
-              src={DownArrowLogo}
-              alt="Down Arrow Logo"
-            />
+            <div className="inner-nav-container">
+              <div className="left-container">
+                <img
+                  className="hover"
+                  src={DashboardLogo}
+                  alt="Dashboard Logo"
+                />
+                <p> Dashboard </p>
+              </div>
+              <div className="right-container">
+                <img
+                  className="down-arrow-logo"
+                  src={DownArrowLogo}
+                  alt="Down Arrow Logo"
+                />
+              </div>
+            </div>
           </li>
           <li onClick={() => setDefaultHomeScreen("Bikes")}>
-            <img className="hover" src={BikeLogo} alt="Bike Logo" />
-            Bikes
-            <img
-              className="down-arrow-logo"
-              src={DownArrowLogo}
-              alt="Down Arrow Logo"
-            />
+            <div className="inner-nav-container">
+              <div className="left-container">
+                <img className="hover" src={BikeLogo} alt="Bike Logo" />
+                <p> Bikes</p>
+              </div>
+              <div className="right-container">
+                <img
+                  className="down-arrow-logo"
+                  src={DownArrowLogo}
+                  alt="Down Arrow Logo"
+                />
+              </div>
+            </div>
           </li>
           <li onClick={() => setDefaultHomeScreen("Maintenance")}>
-            <img
-              className="hover"
-              src={MaintenanceLogo}
-              alt="Maintenance Logo"
-            />
-            Maintenance
-            <img
-              className="down-arrow-logo"
-              src={DownArrowLogo}
-              alt="Down Arrow Logo"
-            />
+            <div className="inner-nav-container">
+              <div className="left-container">
+                <img
+                  className="hover"
+                  src={MaintenanceLogo}
+                  alt="Maintenance Logo"
+                />
+                <p> Maintenance</p>
+              </div>
+              <div className="right-container">
+                <img
+                  className="down-arrow-logo"
+                  src={DownArrowLogo}
+                  alt="Down Arrow Logo"
+                />
+              </div>
+            </div>
           </li>
           <li>
-            <img className="hover" src={StatisticsLogo} alt="Statistics Logo" />
-            Statistics
-            <img
-              className="down-arrow-logo"
-              src={DownArrowLogo}
-              alt="Down Arrow Logo"
-            />
+            <div className="inner-nav-container">
+              <div className="left-container">
+                <img
+                  className="hover"
+                  src={StatisticsLogo}
+                  alt="Statistics Logo"
+                />
+                <p>Statistics </p>
+              </div>
+              <div className="right-container">
+                <img
+                  className="down-arrow-logo"
+                  src={DownArrowLogo}
+                  alt="Down Arrow Logo"
+                />
+              </div>
+            </div>
           </li>
           <li>
-            <img className="hover" src={CalenderLogo} alt="Calendar Logo" />
-            Calendar
-            <img
-              className="down-arrow-logo"
-              src={DownArrowLogo}
-              alt="Down Arrow Logo"
-            />
+            <div className="inner-nav-container">
+              <div className="left-container">
+                <img className="hover" src={CalenderLogo} alt="Calendar Logo" />
+                <p> Calendar</p>
+              </div>
+
+              <div className="right-container">
+                <img
+                  className="down-arrow-logo"
+                  src={DownArrowLogo}
+                  alt="Down Arrow Logo"
+                />
+              </div>
+            </div>
           </li>
         </div>
       </ul>

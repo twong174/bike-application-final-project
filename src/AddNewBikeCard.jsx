@@ -1,34 +1,79 @@
 import React, { useState } from "react";
 import CloseLogo from "../src/svg-images/close.svg";
-import "./AddNewBikeCard.css";
+import "../src/styles/AddNewBikeCard.css";
 
-const AddNewBikeCard = () => {
+const AddNewBikeCard = ({ closeModal, addBike }) => {
+  const [bikeDetails, setBikeDetails] = useState({
+    bikeName: "",
+    bikeType: "",
+    bikeBrand: "",
+    lastMaintenance: "",
+    notes: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setBikeDetails({ ...bikeDetails, [name]: value });
+  };
+
+  const handleAddBike = () => {
+    addBike(bikeDetails);
+  };
+
   return (
     <div className="add-new-bike-card-container">
-      <img src={CloseLogo} alt="Close Logo" className="close-logo" />
+      <img
+        src={CloseLogo}
+        alt="Close Logo"
+        className="close-logo"
+        onClick={closeModal}
+      />
       <div className="title-container">
-        <h1 className="new-bike-title"> New Bike </h1>
+        <p className="new-bike-title">New Bike</p>
       </div>
 
       <div className="input-field-container">
-        <div className="name-container">
-          <p> Name </p>
-          <input placeholder="Name" />
+        <div className="inner-container">
+          <p className="input-field-title">NAME</p>
+          <input
+            name="bikeName"
+            placeholder="Name"
+            onChange={handleChange}
+            value={bikeDetails.bikeName}
+          />
         </div>
-        <div className="bike-type-container">
-          <p> Bike Type </p>
-          <input placeholder="Bike Type" />
+        <div className="inner-container">
+          <p className="input-field-title">BIKE TYPE</p>
+          <input
+            name="bikeType"
+            placeholder="Bike Type"
+            onChange={handleChange}
+            value={bikeDetails.bikeType}
+          />
         </div>
-        <div className="brand-container">
-          <p> Brand </p>
-          <input placeholder="Brand" />
+        <div className="inner-container">
+          <p className="input-field-title">BRAND</p>
+          <input
+            name="bikeBrand"
+            placeholder="Brand"
+            onChange={handleChange}
+            value={bikeDetails.bikeBrand}
+          />
         </div>
-        <div className="weight-container">
-          <p> Weight </p>
-          <input placeholder="Weight" />
+        <div className="inner-container">
+          <p className="input-field-title">NOTES</p>
+          <textarea
+           className = "notes-input"
+            name="notes"
+            placeholder="Notes"
+            onChange={handleChange}
+            value={bikeDetails.notes}
+          />
         </div>
         <div className="add-bike-button-container">
-          <button className="add-bike-button">Add Bike</button>
+          <button className="add-bike-button" onClick={handleAddBike}>
+            Add Bike
+          </button>
         </div>
       </div>
     </div>

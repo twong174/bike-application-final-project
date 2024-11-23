@@ -1,5 +1,5 @@
 import React from "react";
-import "./CalenderWidget.css";
+import "../src/styles/CalenderWidget.css";
 
 const CalenderWidget = () => {
   return (

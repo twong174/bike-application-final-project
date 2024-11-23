@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchBar.css";
+import "../src/styles/SearchBar.css";
 import SearchLogo from "../src/svg-images/search.svg";
 import DarkModeLogo from "../src/svg-images/dark-mode.svg";
 import RavenLogo from "../src/svg-images/raven.svg";

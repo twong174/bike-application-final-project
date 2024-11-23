@@ -1,8 +1,8 @@
 import React from "react";
-import "./Maintenance.css";
+import "../src/styles/Maintenance.css";
 import FilterLogo from "../src/svg-images/filter.svg";
 import AddLogo from "../src/svg-images/add.svg";
-import MaintenanceActionBar from "./MaintenanceActionBar";
+import ButtonBar from "./ButtonBar";
 
 const Maintenance = () => {
   return (
@@ -12,7 +12,13 @@ const Maintenance = () => {
         <p className="maintenance-container-description">Tactical overview</p>
       </div>
 
-      <MaintenanceActionBar />
+      <ButtonBar
+        title="Bikes"
+        leftLogo={FilterLogo}
+        rightLogo={AddLogo}
+        leftButton="Filter"
+        rightButton="Add New"
+      />
     </div>
   );
 };

@@ -3,11 +3,8 @@ import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
 import Bikes from "./Bikes";
 import Dashboard from "./Dashboard";
-import DashboardActionBar from "./DashboardActionBar";
-import DashboardInfoCard from "./DashboardInfoCard";
-import IncreaseButton from "./IncreaseButton";
 import Maintenance from "./Maintenance";
-import "./App.css";
+import "../src/styles/App.css";
 
 const App = () => {
   const [defaultHomeScreen, setDefaultHomeScreen] = useState("Dashboard");

@@ -1,10 +1,12 @@
 import React from "react";
 import DashboardInfoCard from "./DashboardInfoCard";
-import DashboardActionBar from "./DashboardActionBar";
 import CalenderWidget from "./CalenderWidget";
 import ToDoWidget from "./ToDoWidget";
+import ButtonBar from "./ButtonBar";
+import DownloadLogo from "../src/svg-images/download.svg";
+import CalenderLogo from "../src/svg-images/calender.svg";
 
-import "./Dashboard.css";
+import "../src/styles/Dashboard.css";
 
 const Dashboard = () => {
   return (
@@ -14,12 +16,21 @@ const Dashboard = () => {
         <p className="dashboard-container-description">Tactical overview</p>
       </div>
 
-      <DashboardActionBar />
-
+      <ButtonBar
+        title="Overview"
+        leftLogo={CalenderLogo}
+        rightLogo={DownloadLogo}
+        leftButton="Monthly"
+        rightButton="Download"
+      />
       <div className="widget-container">
         <div className="left-widget-container">
           <div className="info-card-grid-container">
-            <DashboardInfoCard />
+            <DashboardInfoCard
+              statTitle="TOTAL MILES RIDDEN"
+              statNumber="1000"
+              lastMonthStatNumber="10"
+            />
             <DashboardInfoCard />
             <DashboardInfoCard />
             <DashboardInfoCard />

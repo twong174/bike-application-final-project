@@ -13,7 +13,7 @@
   align-items: center;
 }
 
-.fixed-label { 
+.bike-label { 
   margin-left: 20px;
   margin-top: 10px;
   border-radius: 10px;
@@ -30,6 +30,7 @@
 .more-horiz-logo { 
   margin-right: 20px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .bike-name { 

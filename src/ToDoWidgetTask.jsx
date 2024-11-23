@@ -1,5 +1,5 @@
 import React from "react";
-import "./ToDoWidgetTask.css";
+import "../src/styles/ToDoWidgetTask.css";
 import CalenderLogo from "../src/svg-images/calender.svg";
 import MoreVertLogo from "../src/svg-images/more-vert.svg";
 

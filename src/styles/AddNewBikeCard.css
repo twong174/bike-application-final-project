@@ -1,0 +1,67 @@
+* { 
+  box-sizing: border-box;
+}
+
+.add-new-bike-card-container { 
+  width: 600px;
+  height: 600px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  position: relative;
+  background-color: white;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-bike-title { 
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.input-field-title { 
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.inner-container { 
+  margin-top: 4px;
+}
+.close-logo { 
+ margin-top: 10px;
+ margin-left: 10px;
+ cursor: pointer;
+}
+
+.input-field-container input { 
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+.notes-input { 
+  padding: 10px; 
+  height: 80px;
+  width: 100%; 
+  border-radius: 5px
+}
+
+.add-bike-button { 
+  padding: 10px;
+  width: 100%;
+  background-color: #214DCF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+
+
