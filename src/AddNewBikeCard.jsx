@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CloseLogo from "../src/svg-images/close.svg";
 import "../src/styles/AddNewBikeCard.css";
+import OpenCloseManager from "./OpenCloseManager";
 
 const AddNewBikeCard = ({ closeModal, addBike }) => {
   const [bikeDetails, setBikeDetails] = useState({

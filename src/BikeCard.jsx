@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../src/styles/BikeCard.css";
 import MoreHorizLogo from "../src/svg-images/more-horiz.svg";
 import ConstructionLogo from "../src/svg-images/construction.svg";
+import EditDeleteCard from "./EditDeleteCard";
 
-const BikeCard = ({ bike, handleExpandEvent, handleToggleEditDeleteCard }) => {
+const BikeCard = ({ bike, handleExpandEvent }) => {
+  const [editDeleteVisible, setEditDeleteVisible] = useState(false);
+
+  const toggleEditDeleteVisibility = (e) => {
+    e.stopPropagation();
+    setEditDeleteVisible(!editDeleteVisible);
+  };
+
   return (
     <div className="card-container" onClick={handleExpandEvent}>
       <div className="top-row">
@@ -12,11 +20,9 @@ const BikeCard = ({ bike, handleExpandEvent, handleToggleEditDeleteCard }) => {
           className="more-horiz-logo"
           src={MoreHorizLogo}
           alt="More Horiz Logo"
-          onClick={(e) => {
-            e.stopPropagation(); // Prevent triggering the card's expand event
-            handleToggleEditDeleteCard(e); // Pass the event to determine position
-          }}
+          onClick={toggleEditDeleteVisibility}
         />
+        {editDeleteVisible && <EditDeleteCard />}
       </div>
       <p className="bike-name">{bike.bikeName}</p>
       <p className="bike-model">{bike.bikeBrand}</p>

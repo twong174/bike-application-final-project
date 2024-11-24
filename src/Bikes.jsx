@@ -13,19 +13,6 @@ const Bikes = () => {
   const [selectedBike, setSelectedBike] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Load bikes from localStorage
-  useEffect(() => {
-    const storedBikes = JSON.parse(localStorage.getItem("bikes"));
-    if (storedBikes) {
-      setBikes(storedBikes);
-    }
-  }, []);
-
-  // Save bikes to localStorage
-  useEffect(() => {
-    localStorage.setItem("bikes", JSON.stringify(bikes));
-  }, [bikes]);
-
   const toggleNewBikeModal = () => {
     setNewBikeModalOpen(!newBikeModalOpen);
   };

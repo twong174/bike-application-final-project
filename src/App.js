@@ -5,8 +5,10 @@ import Bikes from "./Bikes";
 import Dashboard from "./Dashboard";
 import Maintenance from "./Maintenance";
 import "../src/styles/App.css";
+import AddRide from "./AddRide";
 
 const App = () => {
+  
   const [defaultHomeScreen, setDefaultHomeScreen] = useState("Dashboard");
 
   const renderHomeScreen = () => {
@@ -21,8 +23,10 @@ const App = () => {
         return <Dashboard />;
     }
   };
+  
 
   return (
+    
     <div className="app-container">
       <aside className="vertical-nav">
         <Navbar setDefaultHomeScreen={setDefaultHomeScreen} />
@@ -34,6 +38,9 @@ const App = () => {
         <section className="dashboard">{renderHomeScreen()}</section>
       </div>
     </div>
+    
+
+   
   );
 };
 

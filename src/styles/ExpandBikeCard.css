@@ -1,0 +1,56 @@
+.expand-bike-card-container { 
+  background-color: white;
+  border-radius: 5px;
+  height: 500px;
+  margin: 0 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-bike-card-section-container { 
+  width: 33%;
+}
+
+.middle-bike-card-section-container { 
+  background-color: rgb(242, 242, 247)	;
+  width: 33%;
+  border: 1px solid rgb(174, 174, 177);
+  border-radius: 5px;
+}
+
+.right-bike-card-section-container { 
+  background-color: lightblue;
+  width: 33%;
+  border: 1px solid rgb(174, 174, 177);
+  border-radius: 5px;
+}
+
+.add-ride-button, .maintenance-button { 
+  padding: 10px;
+  width: 100%;
+  background-color: #214DCF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.close-button { 
+  padding: 10px;
+  width: 100%;
+  background-color: #214DCF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.main-button-container { 
+  margin-top: 300px;;
+}
+
+
+
