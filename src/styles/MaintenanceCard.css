@@ -1,0 +1,22 @@
+.maintenance-card-container { 
+  background-color: lightblue;
+  height: 150px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.header-container, .task-header-container { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-container { 
+  padding: 0 5px;
+}
+
+.task-header-container, .task-tools, .task-notes { 
+  padding: 0 15px;
+}
+

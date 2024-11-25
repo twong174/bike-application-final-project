@@ -1,18 +1,38 @@
 import React, { useState } from "react";
+import "../src/styles/AddRide.css";
+import RideCard from "./RideCard";
 
-const AddRide = () => {
+const AddRide = ({ toggleAddRide, addNewRide }) => {
   const [rideMiles, setRideMiles] = useState("");
   const [rideDuration, setRideDuration] = useState("");
   const [rideDate, setRideDate] = useState("");
   const [rideNotes, setRideNotes] = useState("");
+  const [rideElevationGain, setRideElevationGain] = useState("");
+  const [rideAverageSpeed, setRideAverageSpeed] = useState("");
 
-  const [rideList, setRideList] = useState([]);
+  const addRideStats = () => {
+    // Create the new ride object
+    const newRide = {
+      rideMiles,
+      rideDuration,
+      rideDate,
+      rideNotes,
+      rideElevationGain,
+      rideAverageSpeed,
+    };
 
-  const addRideEvent = () => {
-    console.log(rideMiles);
-    console.log(rideDuration);
-    console.log(rideDate);
-    console.log(rideNotes);
+    // Add the new ride to the list of rides
+    addNewRide(newRide);
+
+    // Reset the form fields
+    setRideMiles("");
+    setRideDuration("");
+    setRideDate("");
+    setRideNotes("");
+    setRideElevationGain("");
+    setRideAverageSpeed("");
+
+    toggleAddRide();
   };
 
   return (
@@ -39,6 +59,23 @@ const AddRide = () => {
           />
         </div>
         <div className="inner-container">
+          <p className="input-field-title">ELEVATION GAIN</p>
+          <input
+            name="rideElevationGain"
+            placeholder="Elevation Gain"
+            onChange={(e) => setRideElevationGain(e.target.value)}
+          />
+        </div>
+        <div className="inner-container">
+          <p className="input-field-title">AVERAGE SPEED</p>
+          <input
+            name="rideAverageSpeed"
+            placeholder="Average speed"
+            onChange={(e) => setRideAverageSpeed(e.target.value)}
+          />
+        </div>
+
+        <div className="inner-container">
           <p className="input-field-title">DATE</p>
           <input
             type="date"
@@ -46,6 +83,7 @@ const AddRide = () => {
             onChange={(e) => setRideDate(e.target.value)}
           />
         </div>
+
         <div className="inner-container">
           <p className="input-field-title">NOTES</p>
           <textarea
@@ -56,9 +94,11 @@ const AddRide = () => {
           />
         </div>
         <div className="add-bike-button-container">
-          <button className="add-bike-button">Add Ride</button>
+          <button className="add-bike-button" onClick={addRideStats}>
+            Add Ride
+          </button>
         </div>
-        <button className="close-button" onClick={toggleOpenClose}>
+        <button className="close-button" onClick={toggleAddRide}>
           Close
         </button>
       </div>

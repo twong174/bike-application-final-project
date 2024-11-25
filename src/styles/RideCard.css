@@ -1,0 +1,22 @@
+.ride-card-container { 
+  background-color: lightpink;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.ride-stat-container { 
+  padding-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+
+.individual-stat-container { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
