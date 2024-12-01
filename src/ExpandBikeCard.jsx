@@ -9,7 +9,7 @@ import AddMaintenanceTask from "./AddMaintenanceTask";
 const ExpandBikeCard = ({ bike, handleCollapseEvent }) => {
   const [isAddRideVisible, setIsAddRideVisible] = useState(false);
   const [isAddTaskVisible, setIsAddTaskVisible] = useState(false);
-  const [rides, setRides] = useState([]); // Store rides here
+  const [rides, setRides] = useState([]); 
   const [tasks, setTasks] = useState([]);
 
   const toggleAddRide = () => {
@@ -21,7 +21,7 @@ const ExpandBikeCard = ({ bike, handleCollapseEvent }) => {
   };
 
   const addNewRide = (newRide) => {
-    setRides((prevRides) => [...prevRides, newRide]); // Add new ride to the array
+    setRides((prevRides) => [...prevRides, newRide]); 
   };
 
   const addNewTask = (newTask) => {
@@ -85,8 +85,8 @@ const ExpandBikeCard = ({ bike, handleCollapseEvent }) => {
             key={index}
             rideMiles={ride.rideMiles}
             rideDuration={ride.rideDuration}
+            rideTitle={ride.rideTitle}
             rideDate={ride.rideDate}
-            rideNotes={ride.rideNotes}
             rideElevationGain={ride.rideElevationGain}
             rideAverageSpeed={ride.rideAverageSpeed}
           />

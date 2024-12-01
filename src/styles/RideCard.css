@@ -1,8 +1,19 @@
 .ride-card-container { 
-  background-color: lightpink;
   margin: 5px;
   padding: 5px;
   border-radius: 5px;
+  border: 1px solid rgb(174, 174, 177)
+}
+
+.ride-card-header { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ride-card-header img { 
+  cursor: pointer;
 }
 
 .ride-stat-container { 
@@ -12,11 +23,31 @@
   gap: 5px;
 }
 
-
 .individual-stat-container { 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.ride-title { 
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ride-date { 
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.individual-stat-title { 
+  font-weight: 600;
+  font-size: 13px;
+  color: rgb(129, 129, 134)
+}
+
+.ride-stat-number { 
+  font-weight: bold;
+  font-size: 14px;
 }
 

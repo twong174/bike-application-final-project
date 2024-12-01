@@ -15,7 +15,7 @@ const BikeCard = ({ bike, handleExpandEvent }) => {
   return (
     <div className="card-container" onClick={handleExpandEvent}>
       <div className="top-row">
-        <span className="bike-label">{bike.bikeType}</span>
+        <span className="bike-label">{bike.bike_type}</span>
         <img
           className="more-horiz-logo"
           src={MoreHorizLogo}
@@ -24,8 +24,8 @@ const BikeCard = ({ bike, handleExpandEvent }) => {
         />
         {editDeleteVisible && <EditDeleteCard />}
       </div>
-      <p className="bike-name">{bike.bikeName}</p>
-      <p className="bike-model">{bike.bikeBrand}</p>
+      <p className="bike-name">{bike.bike_name}</p>
+      <p className="bike-model">{bike.bike_brand}</p>
       <hr />
       <div className="last-maintenance-date-container">
         <img src={ConstructionLogo} alt="Construction Logo" />

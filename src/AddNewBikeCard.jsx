@@ -17,8 +17,35 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
     setBikeDetails({ ...bikeDetails, [name]: value });
   };
 
-  const handleAddBike = () => {
-    addBike(bikeDetails);
+  const handleAddBike = async () => {
+    if (
+      !bikeDetails.bikeName ||
+      !bikeDetails.bikeType ||
+      !bikeDetails.bikeBrand
+    ) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    const response = await fetch(
+      "http://localhost:8888/php_backend/index.php",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bikeDetails),
+      }
+    );
+
+    const result = await response.json();
+    if (result.success) {
+      console.log("Bike added successfully");
+      addBike(bikeDetails);
+      closeModal();
+    } else {
+      console.error("Error adding bike:", result.message);
+    }
   };
 
   return (
@@ -64,13 +91,14 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
         <div className="inner-container">
           <p className="input-field-title">NOTES</p>
           <textarea
-           className = "notes-input"
+            className="notes-input"
             name="notes"
             placeholder="Notes"
             onChange={handleChange}
             value={bikeDetails.notes}
           />
         </div>
+
         <div className="add-bike-button-container">
           <button className="add-bike-button" onClick={handleAddBike}>
             Add Bike

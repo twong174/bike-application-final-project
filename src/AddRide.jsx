@@ -1,34 +1,30 @@
 import React, { useState } from "react";
 import "../src/styles/AddRide.css";
-import RideCard from "./RideCard";
 
 const AddRide = ({ toggleAddRide, addNewRide }) => {
-  const [rideMiles, setRideMiles] = useState("");
-  const [rideDuration, setRideDuration] = useState("");
+  const [rideMiles, setRideMiles] = useState(0);
+  const [rideDuration, setRideDuration] = useState("00:00");
   const [rideDate, setRideDate] = useState("");
-  const [rideNotes, setRideNotes] = useState("");
-  const [rideElevationGain, setRideElevationGain] = useState("");
-  const [rideAverageSpeed, setRideAverageSpeed] = useState("");
+  const [rideTitle, setRideTitle] = useState("Ride 1");
+  const [rideElevationGain, setRideElevationGain] = useState(0);
+  const [rideAverageSpeed, setRideAverageSpeed] = useState(0);
 
   const addRideStats = () => {
-    // Create the new ride object
     const newRide = {
       rideMiles,
       rideDuration,
       rideDate,
-      rideNotes,
+      rideTitle,
       rideElevationGain,
       rideAverageSpeed,
     };
 
-    // Add the new ride to the list of rides
     addNewRide(newRide);
 
-    // Reset the form fields
     setRideMiles("");
     setRideDuration("");
     setRideDate("");
-    setRideNotes("");
+    setRideTitle("");
     setRideElevationGain("");
     setRideAverageSpeed("");
 
@@ -42,6 +38,14 @@ const AddRide = ({ toggleAddRide, addNewRide }) => {
       </div>
 
       <div className="input-field-container">
+        <div className="inner-container">
+          <p className="input-field-title">TITLE</p>
+          <input
+            placeholder="Ride Title"
+            name="rideTitle"
+            onChange={(e) => setRideTitle(e.target.value)}
+          />
+        </div>
         <div className="inner-container">
           <p className="input-field-title">TOTAL MILES</p>
           <input
@@ -84,20 +88,9 @@ const AddRide = ({ toggleAddRide, addNewRide }) => {
           />
         </div>
 
-        <div className="inner-container">
-          <p className="input-field-title">NOTES</p>
-          <textarea
-            className="notes-input"
-            name="notes"
-            placeholder="Notes"
-            onChange={(e) => setRideNotes(e.target.value)}
-          />
-        </div>
-        <div className="add-bike-button-container">
-          <button className="add-bike-button" onClick={addRideStats}>
-            Add Ride
-          </button>
-        </div>
+        <button className="add-bike-button" onClick={addRideStats}>
+          Add Ride
+        </button>
         <button className="close-button" onClick={toggleAddRide}>
           Close
         </button>

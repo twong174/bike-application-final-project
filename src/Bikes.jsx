@@ -12,6 +12,33 @@ const Bikes = () => {
   const [newBikeModalOpen, setNewBikeModalOpen] = useState(false);
   const [selectedBike, setSelectedBike] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBikes = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:8888/php_backend/get_bikes.php"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch bikes");
+        }
+        const data = await response.json();
+        if (data.success) {
+          setBikes(data.data);
+        } else {
+          setError("No bikes found");
+        }
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBikes();
+  }, []);
 
   const toggleNewBikeModal = () => {
     setNewBikeModalOpen(!newBikeModalOpen);
@@ -19,7 +46,6 @@ const Bikes = () => {
 
   const addBike = (newBike) => {
     setBikes([...bikes, newBike]);
-    setNewBikeModalOpen(false);
   };
 
   const handleExpandEvent = (bike) => {
@@ -48,7 +74,10 @@ const Bikes = () => {
         onRightClick={toggleNewBikeModal}
       />
 
-      {!isExpanded ? (
+      {loading && <p>Loading bikes...</p>}
+      {error && <p>Error: {error}</p>}
+
+      {!loading && !error && !isExpanded && (
         <div className="bike-card-container">
           {bikes.map((bike, index) => (
             <BikeCard
@@ -58,7 +87,9 @@ const Bikes = () => {
             />
           ))}
         </div>
-      ) : (
+      )}
+
+      {isExpanded && (
         <ExpandBikeCard
           bike={selectedBike}
           handleCollapseEvent={handleCollapseEvent}
