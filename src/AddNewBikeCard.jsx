@@ -17,20 +17,17 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
 
   const handleAddBike = async () => {
     try {
-      const response = await fetch(
-        "http://localhost:8888/php_backend/index.php",
-        {
-          mode: 'cors',
-          method: "POST", 
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(bikeDetails), 
-        }
-      );
+      const response = await fetch("http://localhost:8888/index.php", {
+        mode: "cors",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bikeDetails),
+      });
 
       const data = await response.json();
-      console.log(data); 
+      console.log(data);
     } catch (error) {
       console.error("Error:", error);
     }
