@@ -28,6 +28,8 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
 
       const data = await response.json();
       console.log(data);
+      addBike(bikeDetails);
+      closeModal();
     } catch (error) {
       console.error("Error:", error);
     }

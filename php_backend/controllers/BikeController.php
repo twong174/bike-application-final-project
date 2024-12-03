@@ -1,8 +1,8 @@
 <?php
 namespace Controllers;
 
-use config\Database;
-use models\Bike;
+use Config\Database;
+use Models\Bike;
 
 class BikeController {
     private $bike;
