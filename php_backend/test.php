@@ -1,3 +1,3 @@
 <?php
-
-echo "Test file works!";
+echo "PHP is working!";
+?>

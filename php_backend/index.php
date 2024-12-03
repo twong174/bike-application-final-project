@@ -1,39 +1,37 @@
 <?php
-ini_set('display_errors', 1);
 error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: PUT, GET, POST");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bike_garage";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die(json_encode(['success' => false, 'message' => 'Connection failed: ' . $conn->connect_error]));
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header("HTTP/1.1 200 OK"); 
+    exit; 
 }
 
-$data = json_decode(file_get_contents('php://input'), true);
+require_once 'vendor/autoload.php';
 
-if (empty($data['bikeName']) || empty($data['bikeType']) || empty($data['bikeBrand'])) {
-    echo json_encode(['success' => false, 'message' => 'Required fields are missing']);
-    exit;
+use controllers\BikeController;
+
+try {
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $inputData = file_get_contents("php://input");
+        
+        $bikeDetails = json_decode($inputData, true);
+        
+        if ($bikeDetails === null) {
+            echo json_encode(["error" => "Invalid JSON data received."]);
+            exit();
+        }
+        
+        echo json_encode(["message" => "Bike added successfully", "data" => $bikeDetails]);
+    } else {
+        echo json_encode(["message" => "Index.php is working and handling request"]);
+    }
+} catch (\Exception $e) {
+    echo json_encode(["error" => $e->getMessage()]);
 }
-
-$stmt = $conn->prepare("INSERT INTO bikes (bike_name, bike_type, bike_brand) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $data['bikeName'], $data['bikeType'], $data['bikeBrand']);
-
-if ($stmt->execute()) {
-    echo json_encode(['success' => true, 'message' => 'Bike added successfully']);
-} else {
-    echo json_encode(['success' => false, 'message' => 'Error adding bike: ' . $stmt->error]);
-}
-
-$stmt->close();
-$conn->close();
 ?>

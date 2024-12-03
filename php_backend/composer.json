@@ -1,0 +1,18 @@
+{
+    "name": "twong/bike-backend",
+    "description": "PHP backend for bike management",
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "php_backend/controllers/",
+            "Models\\": "php_backend/models/",
+            "Config\\": "php_backend/config/"
+        }
+    },
+    "authors": [
+        {
+            "name": "twong174",
+            "email": "twong33@fordham.edu"
+        }
+    ],
+    "require": {}
+}

@@ -19,12 +19,21 @@ const Bikes = () => {
     const fetchBikes = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8888/php_backend/get_bikes.php"
+          "http://localhost:8888/index.php",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json"
+            }
+          }
         );
+
         if (!response.ok) {
           throw new Error("Failed to fetch bikes");
         }
+
         const data = await response.json();
+        
         if (data.success) {
           setBikes(data.data);
         } else {

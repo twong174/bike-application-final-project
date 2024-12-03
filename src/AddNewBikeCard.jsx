@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import CloseLogo from "../src/svg-images/close.svg";
 import "../src/styles/AddNewBikeCard.css";
-import OpenCloseManager from "./OpenCloseManager";
 
 const AddNewBikeCard = ({ closeModal, addBike }) => {
   const [bikeDetails, setBikeDetails] = useState({
     bikeName: "",
     bikeType: "",
     bikeBrand: "",
-    lastMaintenance: "",
     notes: "",
   });
 
@@ -18,33 +16,23 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
   };
 
   const handleAddBike = async () => {
-    if (
-      !bikeDetails.bikeName ||
-      !bikeDetails.bikeType ||
-      !bikeDetails.bikeBrand
-    ) {
-      alert("Please fill out all required fields.");
-      return;
-    }
+    try {
+      const response = await fetch(
+        "http://localhost:8888/php_backend/index.php",
+        {
+          mode: 'cors',
+          method: "POST", 
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bikeDetails), 
+        }
+      );
 
-    const response = await fetch(
-      "http://localhost:8888/php_backend/index.php",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bikeDetails),
-      }
-    );
-
-    const result = await response.json();
-    if (result.success) {
-      console.log("Bike added successfully");
-      addBike(bikeDetails);
-      closeModal();
-    } else {
-      console.error("Error adding bike:", result.message);
+      const data = await response.json();
+      console.log(data); 
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
