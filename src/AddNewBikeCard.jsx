@@ -16,7 +16,7 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
   };
 
   const handleAddBike = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); 
 
     if (
       !bikeDetails.bikeName ||
