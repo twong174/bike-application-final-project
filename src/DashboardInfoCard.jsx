@@ -18,7 +18,7 @@ const DashboardInfoCard = (props, {rideMiles}) => {
       </div>
       <div className="additional-info-container">
         <p className="stat-from-last-month">
-          <span className="last-month-stat-number"> +{rideMiles} </span> from last month
+          <span className="last-month-stat-number"> +{props.lastMonthStatNumber} </span> from last month
         </p>
         <img src={ArrowRightAltLogo} alt="Arrow Right Alt Logo" />
       </div>

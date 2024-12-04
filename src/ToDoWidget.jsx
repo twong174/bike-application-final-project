@@ -10,9 +10,9 @@ const ToDoWidget = () => {
         <p className="todo-widget-description">Urgent...</p>
       </div>
 
-      <ToDoWidgetTask />
-      <ToDoWidgetTask />
-      <ToDoWidgetTask />
+      <ToDoWidgetTask toDoTask="Clean Chain" toDoDate="03 May 2024" />
+      <ToDoWidgetTask toDoTask="Pump Wheels" toDoDate="07 May 2024" />
+      <ToDoWidgetTask toDoTask="Adjust Brake Tension" toDoDate="09 May 2024" />
     </div>
   );
 };

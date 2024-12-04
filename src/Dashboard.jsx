@@ -31,9 +31,21 @@ const Dashboard = () => {
               statNumber="1000"
               lastMonthStatNumber="10"
             />
-            <DashboardInfoCard />
-            <DashboardInfoCard />
-            <DashboardInfoCard />
+            <DashboardInfoCard
+              statTitle="TOTAL HOURS RIDDEN"
+              statNumber="30"
+              lastMonthStatNumber="20"
+            />
+            <DashboardInfoCard
+              statTitle="TOTAL RIDES"
+              statNumber="14"
+              lastMonthStatNumber="3"
+            />
+            <DashboardInfoCard
+              statTitle="TOTAL BIKES OWNED"
+              statNumber="2"
+              lastMonthStatNumber="1"
+            />
           </div>
           <CalenderWidget />
         </div>
