@@ -16,22 +16,44 @@ require_once 'vendor/autoload.php';
 use controllers\BikeController;
 
 try {
-    
+    // Database connection details
+    $host = 'localhost';
+    $db = 'bike_garage';
+    $user = 'root';
+    $pass = "root";
+    $charset = 'utf8mb4';
+
+    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+    $pdo = new PDO($dsn, $user, $pass, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ]);
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $inputData = file_get_contents("php://input");
-        
         $bikeDetails = json_decode($inputData, true);
-        
+
         if ($bikeDetails === null) {
             echo json_encode(["error" => "Invalid JSON data received."]);
             exit();
         }
-        
+
+        // Insert data into the database
+        $stmt = $pdo->prepare("INSERT INTO bikes (bike_name, bike_type, bike_brand, notes) VALUES (:bikeName, :bikeType, :bikeBrand, :notes)");
+        $stmt->execute([
+            ':bikeName' => $bikeDetails['bikeName'],
+            ':bikeType' => $bikeDetails['bikeType'],
+            ':bikeBrand' => $bikeDetails['bikeBrand'],
+            ':notes' => $bikeDetails['notes'] ?? null,
+        ]);
+
         echo json_encode(["message" => "Bike added successfully", "data" => $bikeDetails]);
     } else {
         echo json_encode(["message" => "Index.php is working and handling request"]);
     }
-} catch (\Exception $e) {
-    echo json_encode(["error" => $e->getMessage()]);
+} catch (PDOException $e) {
+    echo json_encode(["error" => "Database error: " . $e->getMessage()]);
+} catch (Exception $e) {
+    echo json_encode(["error" => "Error: " . $e->getMessage()]);
 }
 ?>

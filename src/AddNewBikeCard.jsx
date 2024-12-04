@@ -15,7 +15,9 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
     setBikeDetails({ ...bikeDetails, [name]: value });
   };
 
-  const handleAddBike = async () => {
+  const handleAddBike = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
     if (
       !bikeDetails.bikeName ||
       !bikeDetails.bikeType ||
@@ -55,7 +57,7 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
         <p className="new-bike-title">New Bike</p>
       </div>
 
-      <div className="input-field-container">
+      <form className="input-field-container" onSubmit={handleAddBike}>
         <div className="inner-container">
           <p className="input-field-title">NAME</p>
           <input
@@ -95,11 +97,11 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
         </div>
 
         <div className="add-bike-button-container">
-          <button className="add-bike-button" onClick={handleAddBike}>
+          <button className="add-bike-button" type="submit">
             Add Bike
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
