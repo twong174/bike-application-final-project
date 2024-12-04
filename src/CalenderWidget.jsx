@@ -9,7 +9,7 @@ const CalenderWidget = () => {
         <p className="calender-widget-description">A few upcoming tasks...</p>
       </div>
       <div className="calender-grid-container">
-        <p className="current-month"> DECEMBER 2020 </p>
+        <p className="current-month"> DECEMBER 2024 </p>
         <ol className="calender-grid">
           <li className="day-name">Sun</li>
           <li className="day-name">Mon</li>

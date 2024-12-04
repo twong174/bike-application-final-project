@@ -9,11 +9,11 @@ const Maintenance = () => {
     <div className="maintenance-container">
       <div className="top-bar-container">
         <p className="maintenance-container-title"> Maintenance </p>
-        <p className="maintenance-container-description">Tactical overview</p>
+        <p className="maintenance-container-description">Fixer Upper</p>
       </div>
 
       <ButtonBar
-        title="Bikes"
+        title="Maintenance"
         leftLogo={FilterLogo}
         rightLogo={AddLogo}
         leftButton="Filter"

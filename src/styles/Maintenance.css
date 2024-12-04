@@ -4,10 +4,12 @@
 
 .maintenance-container-title {
   font-size: 24px;
+  font-weight: 600;
 }
 
 .maintenance-container-description {
   font-size: 14px;
+  color: #8E8E93;
 }
 
 .widget-container {
