@@ -16,6 +16,14 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
   };
 
   const handleAddBike = async () => {
+    if (
+      !bikeDetails.bikeName ||
+      !bikeDetails.bikeType ||
+      !bikeDetails.bikeBrand
+    ) {
+      alert("Please fill out all required fields.");
+      return;
+    }
     try {
       const response = await fetch("http://localhost:8888/index.php", {
         mode: "cors",
