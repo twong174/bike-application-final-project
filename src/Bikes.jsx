@@ -19,7 +19,7 @@ const Bikes = () => {
     const fetchBikes = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8888/index.php",
+          "http://localhost:8888/get_bikes.php",
           {
             method: "GET",
             headers: {

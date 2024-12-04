@@ -97,7 +97,7 @@ const AddNewBikeCard = ({ closeModal, addBike }) => {
         </div>
 
         <div className="add-bike-button-container">
-          <button className="add-bike-button" type="submit">
+          <button className="add-bike-button" type="submit" onClick = {handleAddBike}>
             Add Bike
           </button>
         </div>
